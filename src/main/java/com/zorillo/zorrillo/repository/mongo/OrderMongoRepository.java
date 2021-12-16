@@ -1,7 +1,7 @@
 // Mongo package
 package com.zorillo.zorrillo.repository.mongo;
 
-import java.util.Date;
+//import java.util.Date;
 import java.util.List;
 
 // Zorrillo imports
@@ -15,8 +15,8 @@ public interface OrderMongoRepository extends MongoRepository<Order, Integer> {
     List<Order> findBySalesManId(Integer id);
     List<Order> findByStatusAndSalesManId(String status, Integer id);
 
-    List<Order> findByStatus(String status);
-    List<Order> findByRegisterDay(Date registerDay);
-    List<Order> findByRegisterDayAndSalesManId(Date registerDay, Integer id);
+    //List<Order> findByStatus(String status);
+    //List<Order> findByRegisterDay(Date registerDay);
+    //List<Order> findByRegisterDayAndSalesManId(Date registerDay, Integer id);
 
 }

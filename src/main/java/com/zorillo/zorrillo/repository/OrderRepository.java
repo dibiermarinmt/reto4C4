@@ -4,7 +4,6 @@ package com.zorillo.zorrillo.repository;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 // Utils imports
-import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -60,15 +59,15 @@ public class OrderRepository {
         return mongo.findByStatusAndSalesManId(status, id);
     }
 
-    // Find orders by RegisterDay
+    /*Find orders by RegisterDay
     public List<Order> findOrdersByRegisterDay(Date registerDay) {
         return mongo.findByRegisterDay(registerDay);
-    }
+    }*/
 
-    // Find orders by status
+    /*Find orders by status
     public List<Order> findOrdersByStatus(String status) {
         return mongo.findByStatus(status);
-    }
+    }*/
 
     // Find orders by register date and salesman id
     public List<Order> findOrdersByRegisterDayAndSalesManId(String registerDay, Integer id) {
