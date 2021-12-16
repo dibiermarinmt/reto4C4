@@ -40,4 +40,14 @@ public class FraganceRepository {
     public void deleteFragance(Fragance fragance) {
         mongo.delete(fragance);
     }
+
+    // Find fragances by price
+    public List<Fragance> findFragancesByPrice(Double price) {
+        return mongo.findByPrice(price);
+    }
+
+    // Find fragances like
+    public List<Fragance> findByDescriptionLike(String description) {
+        return mongo.findByDescriptionLike(description);
+    }
 }

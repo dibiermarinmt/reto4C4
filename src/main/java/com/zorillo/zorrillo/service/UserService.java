@@ -5,7 +5,6 @@ package com.zorillo.zorrillo.service;
 import java.util.List;
 import java.util.Optional;
 
-import com.zorillo.zorrillo.model.NextId;
 // Zorrillo imports
 import com.zorillo.zorrillo.model.User;
 import com.zorillo.zorrillo.repository.UserRepository;
@@ -145,16 +144,9 @@ public class UserService {
         return !user.isEmpty();
     }
 
-    // Get next integer id for new user
-    public NextId findNextId() {
-        Integer id = 1;
-        Optional<User> user = repository.findUserById(id);
-        while(!user.isEmpty()) {
-            id++;
-            user = repository.findUserById(id);
-        }
-        NextId nextId = new NextId();
-        nextId.setNextId(id);
-        return nextId;
+
+    // Find user by birthDay
+    public List<User> findUsersByMonthBirthDay(String monthBirthDay) {
+        return repository.findUsersByMonthBirthDay(monthBirthDay);
     }
 }

@@ -1,6 +1,7 @@
 // Mongo package
 package com.zorillo.zorrillo.repository.mongo;
 
+import java.util.List;
 // Util imports
 import java.util.Optional;
 
@@ -17,4 +18,7 @@ public interface UserMongoRepository extends MongoRepository<User, Integer> {
 
     // Find user by email and password
     Optional<User> findByEmailAndPassword(String email, String password);
+
+    // Find user by month BirthtDay
+    List<User> findByMonthBirthtDay(String monthBirthtDay);
 }

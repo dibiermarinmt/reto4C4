@@ -101,4 +101,14 @@ public class FraganceService {
             repository.deleteFragance(fragance.get());
         }
     }
+
+    // Find fragances by price
+    public List<Fragance> findFragancesByPrice(Double price) {
+        return repository.findFragancesByPrice(price);
+    }
+
+    // Find fragances like
+    public List<Fragance> findByDescriptionLike(String description) {
+        return repository.findByDescriptionLike(description);
+    }
 }

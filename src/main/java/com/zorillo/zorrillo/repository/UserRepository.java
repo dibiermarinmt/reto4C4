@@ -50,4 +50,9 @@ public class UserRepository {
     public void deleteUser(User user) {
         mongo.delete(user);
     }
+
+    // Find user by birthDay
+    public List<User> findUsersByMonthBirthDay(String monthBirthDay){
+        return mongo.findByMonthBirthtDay(monthBirthDay);
+    }
 }

@@ -55,9 +55,34 @@ public class OrderController {
         service.updateOrderState(order);
     }
 
+    // Mapping service to list orders by salesman zone
     @GetMapping("/zona/{zone}")
     public List<Order> findOrdersBySalesManZone(@PathVariable("zone") String zone) {
         return service.findOrdersBySalesManZone(zone);
+    }
+
+    // Mapping service to list orders by salesman  id
+    @GetMapping("/salesman/{id}")
+    public List<Order> findOrdersBySalesManId(@PathVariable("id") Integer id) {
+        return service.findOrdersBySalesManId(id);
+    }
+
+    // Find order by state and salesman id
+    @GetMapping("/state/{status}/{id}")
+    public List<Order> findOrdersByStatusAndSalesManId(@PathVariable("status") String status, @PathVariable("id") Integer id) {
+        return service.findOrdersByStatusAndSalesManId(status, id);
+    }
+
+    /* Find order by register day and salesman id
+    @GetMapping("/date/{registerDay}")
+    public List<Order> findOrdersByRegister(@PathVariable("registerDay") String registerDay) {
+        return service.findOrdersByRegisterDay(registerDay);
+    }*/
+
+    // Find order by register day and salesman id
+    @GetMapping("/date/{registerDay}/{id}")
+    public List<Order> findOrdersByRegisterDayAndSalesManId(@PathVariable("registerDay") String registerDay, @PathVariable("id") Integer id) {
+        return service.findOrdersByRegisterDayAndSalesManId(registerDay, id);
     }
 
     /* Mapping to delete and user by id

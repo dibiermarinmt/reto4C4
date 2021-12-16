@@ -78,6 +78,33 @@ public class OrderService {
         return repository.findOrdersBySalesManZone(zone);
     }
 
+    // Find orders by salesman id
+    public List<Order> findOrdersBySalesManId(Integer id) {
+        return repository.findOrdersBySalesManId(id);
+    }
+
+    // Find order by status day and salesman id
+    public List<Order> findOrdersByStatusAndSalesManId(String status, Integer id) {
+        return repository.findOrdersByStatusAndSalesManId(status, id);
+    }
+
+    /** Find orders by registar day
+    public List<Order> findOrdersByRegisterDay(String date) {
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        Date registerDay = new Date();
+        try {
+            registerDay = dtf.parse(date);
+        } catch(ParseException event) {
+            event.printStackTrace();
+        }
+        return repository.findOrdersByRegisterDay(registerDay);
+    }*/
+
+    // Find orders by registar day and salesman id
+    public List<Order> findOrdersByRegisterDayAndSalesManId(String registerDay, Integer id) {
+        return repository.findOrdersByRegisterDayAndSalesManId(registerDay, id);
+    }
+
     /* Delete user by Id
     public void deleteUserById(Integer id) {
         Optional<User> user = repository.findUserById(id);

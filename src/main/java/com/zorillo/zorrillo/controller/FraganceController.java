@@ -61,4 +61,16 @@ public class FraganceController {
     public void deleteFraganceByReference(@PathVariable("id") String id) {
         service.deleteFraganceByReference(id);
     }
+
+    // Mapping to find fragances by price
+    @GetMapping("/price/{price}")
+    public List<Fragance> findFragancesByPrice(@PathVariable("price") Double price) {
+        return service.findFragancesByPrice(price);
+    }
+
+    // Find fragances like
+    @GetMapping("/description/{description}")
+    public List<Fragance> findByDescriptionLike(@PathVariable("description") String description) {
+        return service.findByDescriptionLike(description);
+    }
 }

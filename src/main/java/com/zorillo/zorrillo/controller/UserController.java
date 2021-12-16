@@ -4,7 +4,6 @@ package com.zorillo.zorrillo.controller;
 
 import java.util.List;
 
-import com.zorillo.zorrillo.model.NextId;
 // Zorrillo imports
 import com.zorillo.zorrillo.model.User;
 import com.zorillo.zorrillo.service.UserService;
@@ -83,9 +82,9 @@ public class UserController {
         return service.checkIdExistence(id);
     }
 
-    //Mapping to get next integer id for new user
-    @GetMapping("/nextid")
-    public NextId findNextId() {
-        return service.findNextId();
+    // Mapping to find user by month birthday
+    @GetMapping("/birthday/{month}")
+    public List<User> findUsersByMonthBirthDay(@PathVariable("month") String monthBirthDay) {
+        return service.findUsersByMonthBirthDay(monthBirthDay);
     }
 }
